@@ -123,5 +123,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/image/download/'
-MEDIA_ROOT = BASE_DIR
-DISABLE_COLLECTSTATIC=1
+MEDIA_ROOT = os.path.join(BASE_DIR)
