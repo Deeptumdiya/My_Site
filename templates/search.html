@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="row mx-auto">
+    {% for product in products %}
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src={{product.image.url}} alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{product.name}}</h5>
+            <p class="card-text">{{product.price}}</p>
+            <p class="card-text">{{product.description}}</p>
+            <form action="/details">
+                <input type="text" hidden name="product_id" value="{{product.id}}">
+                <button type="submit" class="btn btn-primary">Details</button>
+            </form>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
